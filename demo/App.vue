@@ -5,48 +5,17 @@
     <a href="https://github.com/sbarry50/vue-business-hours">Github</a>
     <div class="demo-component">
       <h2>Business Hours</h2>
-      <business-hours :days="demoDays" :time-increment="15"></business-hours>
-    </div>
-    <div class="demo-component">
-      <h2>Holiday Hours, Select Mode</h2>
-      <business-hours
-        :days="demoHolidays"
-        name="holidayHours"
-        type="select"
-        :time-increment="60"
-        color="#00af0b"
-      ></business-hours>
-    </div>
-    <div class="demo-component">
-      <h2>Business Hours with Errors</h2>
-      <business-hours
-        :days="demoDaysErrors"
-        name="specialHours"
-        color="#e06c00"
-      ></business-hours>
-    </div>
-    <div class="demo-component wide">
-      <h2>
-        Business Hours with Spanish Translation, 24h time format, Wider Toggle
-        Switch
-      </h2>
-      <business-hours
-        :days="demoDaysSpanish"
-        name="spanishHoursDatalist"
-        color="#6b0b9d"
-        :localization="demoSpanishLocalization"
-        :switch-width="150"
-        :hour-format24="true"
-      ></business-hours>
-    </div>
-    <div class="demo-component">
-      <h2>Business Hours w/ Event Emitter</h2>
-      <!-- prettier-ignore -->
-      <p><em>Open your console and update hours in the component to see the events firing.</em></p>
-      <business-hours
-        :days="demoDaysEmit"
-        @updated-hours="updatedHours"
-      ></business-hours>
+      <div class="teste">
+        <business-hours
+          :days="days"
+          :localization="textos"
+          name="holidayHours"
+          type="select"
+          :time-increment="60"
+          color="#2563EB"
+          :hourFormat24="true"
+        ></business-hours>
+      </div>
     </div>
   </div>
 </template>
@@ -62,6 +31,95 @@ import demoDaysEmit from './data/demoDaysEmit';
 export default {
   data() {
     return {
+      days: {
+        monday: [
+          {
+            open: '0900',
+            close: '1200',
+            id: '1',
+            isOpen: true
+          },
+          {
+            open: '1300',
+            close: '1800',
+            id: '2',
+            isOpen: false
+          }
+        ],
+        tuesday: [
+          {
+            open: '0900',
+            close: '1200',
+            id: '3',
+            isOpen: true
+          },
+          {
+            open: '1300',
+            close: '1800',
+            id: '4',
+            isOpen: false
+          }
+        ],
+        wednesday: [
+          {
+            open: '0900',
+            close: '1200',
+            id: '5',
+            isOpen: true
+          },
+          {
+            open: '1300',
+            close: '1800',
+            id: '6',
+            isOpen: false
+          }
+        ],
+        thursday: [
+          {
+            open: '0900',
+            close: '1200',
+            id: '7',
+            isOpen: true
+          },
+          {
+            open: '1300',
+            close: '1800',
+            id: '8',
+            isOpen: false
+          }
+        ],
+        friday: [
+          {
+            open: '0900',
+            close: '1200',
+            id: '9',
+            isOpen: true
+          },
+          {
+            open: '1300',
+            close: '1800',
+            id: '10',
+            isOpen: false
+          }
+        ],
+        saturday: [
+          {
+            open: '0900',
+            close: '1300',
+            id: '11',
+            isOpen: true
+          }
+        ],
+
+        sunday: [
+          {
+            open: '',
+            close: '',
+            id: '12',
+            isOpen: false
+          }
+        ]
+      },
       demoDays: demoDays,
       demoDaysSpanish: demoDaysSpanish,
       demoHolidays: demoHolidays,
@@ -80,6 +138,10 @@ export default {
 </script>
 
 <style scoped>
+.teste {
+  width: 400px;
+  border: solid 1px black;
+}
 .demo-container {
   margin: 50px auto;
   width: 800px;
