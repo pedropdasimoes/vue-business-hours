@@ -491,7 +491,7 @@ export default {
 .flex-row /deep/ select {
   margin: 1px;
   padding: 3px 5px;
-  width: 110px;
+  width: 70px;
   height: 28px;
   font-size: 14px;
   line-height: 28px;
@@ -501,15 +501,15 @@ export default {
 }
 
 .flex-row.day {
-  width: 130px;
+  width: 90px;
 }
 
 .flex-row.hours {
-  width: 110px;
+  width: 70px;
 }
 
 .flex-row.dash {
-  margin: 0 7px;
+  margin: 0 4px;
   width: 4px;
 }
 
